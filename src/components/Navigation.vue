@@ -1,13 +1,25 @@
 <template>
-<nav class="navbar">
-<div class="navbar-brand">
-<router-link class="navbar-brand" to="/haircut-hairstyle" title="บริกราตัดสระซอยผม และอื่นๆ">บริการเสริมสวย</router-link>
-<router-link class="navbar-brand" to="/professional-haircare" title="บริการดูแลเส้นผมด้วยผลิตภัณฑ์ชั้นนำ">ดูแลเส้นผม</router-link>
-<router-link class="navbar-brand" to="/spa-treatments" title="ทำสปา นวด ขัดผิว">สปา ทรีทเม้นท์</router-link>
-<router-link class="navbar-brand" to="/phuket-hair-shop" title="ร้านทำผม แฮร์เบส ภูเก็ต">ประวัติและที่ตั้งร้าน</router-link>
-<router-link class="navbar-brand" to="/webboard" title="ร้านทำผม แฮร์เบส ภูเก็ต">กระดานสนทนา</router-link>
-</div>
-</nav>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <router-link
+        class="navbar-brand"
+        to="/haircut-hairstyle"
+        title="บริกราตัดสระซอยผม และอื่นๆ"
+      >บริการเสริมสวย</router-link>
+      <router-link
+        class="navbar-brand"
+        to="/professional-haircare"
+        title="บริการดูแลเส้นผมด้วยผลิตภัณฑ์ชั้นนำ"
+      >ดูแลเส้นผม</router-link>
+      <router-link class="navbar-brand" to="/spa-treatments" title="ทำสปา นวด ขัดผิว">สปา ทรีทเม้นท์</router-link>
+      <router-link
+        class="navbar-brand"
+        to="/phuket-hair-shop"
+        title="ร้านทำผม แฮร์เบส ภูเก็ต"
+      >ประวัติและที่ตั้งร้าน</router-link>
+      <router-link class="navbar-brand" to="/webboard" title="ร้านทำผม แฮร์เบส ภูเก็ต">กระดานสนทนา</router-link>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -35,7 +47,6 @@ let ell = document.querySelector('.navbar')
 ell.appendChild(element) */
 
 export default {
-  name: 'Navigation'
 }
 </script>
 

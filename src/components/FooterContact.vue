@@ -18,7 +18,6 @@ var currentTime = new Date()
 var year = currentTime.getFullYear()
 
 export default {
-  name: 'FooterContact',
   data () {
     return {
       year: year

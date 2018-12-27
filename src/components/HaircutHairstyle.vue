@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1>HaircutHairstyle {{ msg }}</h1>
+    <div class="navbar">
+      <Navigation/>
+    </div>
+    <h1>HaircutHairstyle</h1>
+    <div v-html="content"></div>
     <br>
     <div class="navbar">
       <Navigation/>
@@ -14,15 +18,21 @@ import Navigation from './Navigation'
 import FooterContact from './FooterContact'
 
 export default {
-  name: 'HaircutHairstyle',
   components: {
     Navigation,
     FooterContact
   },
   data () {
     return {
-      msg: 'xxx'
+      msg: 'xxx',
+      content: ''
     }
+  },
+  created: function () {
+    this.$http.get('get_page/?id=7').then(response => {
+      // console.log(response.body.page.content)
+      this.content = response.body.page.content
+    })
   },
   metaInfo: {
     title: 'My Example App', // set a title

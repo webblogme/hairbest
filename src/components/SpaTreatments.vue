@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h1>SpaTreatments {{ msg }}</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium sed molestiae dolorum rem, dignissimos aliquam soluta magnam eaque. Repellendus quisquam quos magni vero saepe, non facere atque dolor molestias.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium sed molestiae dolorum rem, dignissimos aliquam soluta magnam eaque. Repellendus quisquam quos magni vero saepe, non facere atque dolor molestias.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium sed molestiae dolorum rem, dignissimos aliquam soluta magnam eaque. Repellendus quisquam quos magni vero saepe, non facere atque dolor molestias.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium sed molestiae dolorum rem, dignissimos aliquam soluta magnam eaque. Repellendus quisquam quos magni vero saepe, non facere atque dolor molestias.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium sed molestiae dolorum rem, dignissimos aliquam soluta magnam eaque. Repellendus quisquam quos magni vero saepe, non facere atque dolor molestias.</p>
+    <div class="navbar">
+      <Navigation/>
+    </div>
+    <h1>SpaTreatments</h1>
+    <div v-html="content"></div>
     <br>
     <div class="navbar">
       <Navigation/>
@@ -20,15 +19,21 @@ import Navigation from './Navigation'
 import FooterContact from './FooterContact'
 
 export default {
-  name: 'SpaTreatments',
   components: {
     Navigation,
     FooterContact
   },
   data () {
     return {
-      msg: 'xxxxx'
+      msg: 'xxxxx',
+      content: ''
     }
+  },
+  created: function () {
+    this.$http.get('get_page/?id=16').then(response => {
+      // console.log(response.body.page.content)
+      this.content = response.body.page.content
+    })
   }
 }
 </script>
