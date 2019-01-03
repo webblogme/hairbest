@@ -6,7 +6,7 @@
       <div class="column is-two-thirds">
         <h1 class="title">แฮร์เบสท์ ภูเก็ต</h1>
         <h2 class="subtitle">สถาบัน HAIR BEST BY IN TREND HAIR STYLE</h2>
-        <div v-html="content1"></div>
+        <div v-html="content1" class="mb-20"></div>
         <carousel :data="carouselData" :indicators="false" :interval="2500"/>
         <img src="../../static/images/shop4.jpg" class="mt-30">
       </div>

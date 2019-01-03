@@ -3,7 +3,7 @@
     <TopSection fullhead/>
     <Navigation/>
     <div class="columns">
-      <div class="column is-two-thirds">
+      <div class="column is-two-thirds blogdata">
         <h1 class="title">ผลิตภัณฑ์ดูแลเส้นผม</h1>
         <h2 class="subtitle">Professional Haircare</h2>
         <div v-html="content3"></div>

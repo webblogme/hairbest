@@ -8,7 +8,8 @@
         <h2 class="subtitle">Haircut &amp; Style</h2>
         <div v-html="content"></div>
         <p class="has-text-centered">
-          <img src="../../static/images/shop4.jpg">
+          <img src="../../static/images/working.jpg" class="mt-20">
+          <img src="../../static/images/shop4.jpg" class="mt-20">
         </p>
       </div>
       <div class="column aside box">
@@ -16,6 +17,12 @@
         <p>
           รับออกแบบทรงผมสุภาพบุรุษและสุภาพสตรี โดยทีมงานผู้เชี่ยวชาญสร้างสรรค์ด้วยฝีมือ
           เชื่อถือด้วยผลงาน
+        </p>
+        <p class="has-text-centered">
+          <img src="../../static/images/kerafusion-2.jpg" class="mt-20">
+          <img src="../../static/images/tools2.jpg" class="mt-20">
+          <img src="../../static/images/scissors.jpg" alt="เสริมสวย ตัดผม ภูเก็ต" class="mt-20">
+          <img src="../../static/images/shampooroom.jpg" alt="เสริมสวย ภูเก็ต" class="mt-20">
         </p>
       </div>
     </div>

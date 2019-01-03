@@ -2,12 +2,26 @@
 @import 'shorthand.scss';
 body {
   min-height: 100vh;
-  background: url('./assets/bg/bg-pink.jpg') center top no-repeat fixed;
-  background-position-y: 12rem;
+  // background: url('./assets/bg/bg-pink.jpg') center top no-repeat fixed;
+  // background-position-y: 12rem;
+  background: url('./assets/bg/195645ee7357cbb.jpg') center bottom no-repeat fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
 }
 
 h1 {
   @extend .dropshadow;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  color: #999;
 }
 
 .container {
@@ -69,7 +83,7 @@ footer {
 }
 nav {
   margin-bottom: 3rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .roller {
   height: 205px;
@@ -88,7 +102,7 @@ nav {
 .textContactTop {
   p {
     font-size: 0.9rem;
-    line-height: 0.6;
+    //line-height: 0.6;
     &:first-child {
       font-family: 'Sriracha', cursive;
       font-size: 2rem;
@@ -105,7 +119,8 @@ nav {
       display: none;
     }
   }
-  @include desktop-only {
+
+  @include from($tablet) {
     text-align: right;
     padding-top: 2.5rem;
   }
@@ -113,17 +128,17 @@ nav {
 a.navbar-item {
   color: #3273dc;
   padding: 0.8rem 0.95rem;
-  border-top: 2px solid #ccc;
+  //border-top: 2px solid #ccc;
   &:hover {
     background: none;
     text-decoration: underline;
-    @include transition(all, 0.5s, ease);
+    // @include transition(all, 0.5s, ease);
   }
   &.active {
     text-decoration: underline;
     color: #ff0a66;
   }
-  @include transition(all, 0.5s, ease);
+  // @include transition(all, 0.5s, ease);
 }
 
 .columns {
@@ -136,7 +151,7 @@ a.navbar-item {
         list-style-type: disc;
         border-bottom: 1px dotted #ff0a66;
         padding: 0.5rem;
-        //max-width: 80%;
+        max-width: 70%;
       }
       & li:last-child {
         border-bottom: none;
@@ -196,4 +211,15 @@ a.button.is-loading {
 
 p.red {
   color: #900;
+}
+
+.wp-image-73,
+.wp-image-76 {
+  float: right;
+  margin-left: 20px;
+}
+
+.wp-image-79 {
+  float: left;
+  margin-right: 20px;
 }
