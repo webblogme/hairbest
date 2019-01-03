@@ -10,15 +10,18 @@
         <div v-html="content"></div>
         <img src="../../static/images/dermalogica.jpg" class="mt-20">
       </div>
-      <div class="column aside box">
+      <div class="column aside">
         <carousel :data="carouselData" :indicators="false" :interval="2500"/>
-        <img src="../../static/images/spas-purple.jpg" class="mt-10">
+        <p class="is-centered-text">
+          <img src="../../static/images/spas-purple.jpg" class="mt-10">
+        </p>
         <p>
           รับออกแบบทรงผมสุภาพบุรุษและสุภาพสตรี โดยทีมงานผู้เชี่ยวชาญสร้างสรรค์ด้วยฝีมือ
           เชื่อถือด้วยผลงาน
         </p>
       </div>
     </div>
+    <LowerPart/>
     <FooterContact/>
   </div>
 </template>

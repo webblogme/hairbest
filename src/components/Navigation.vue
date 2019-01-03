@@ -23,7 +23,10 @@
             active-class="active"
             :to="cat[2]"
             :key="cat[0]"
-          >{{ cat[1] }}</router-link>
+          >
+            <span>&#9752;</span>
+            {{ cat[1] }}
+          </router-link>
         </template>
       </div>
     </div>
@@ -47,8 +50,4 @@ export default {
 </script>
 
 <style scoped>
-.navbar-start {
-  /* flex-grow: 1;
-  justify-content: center; */
-}
 </style>

@@ -1,6 +1,13 @@
 <template>
-  <div id="app" class="container">
-    <router-view/>
+  <div>
+    <div class="something">
+      <div class="container" style="background:none; box-shadow:none;">
+        <font-awesome-icon icon="star"/>&nbsp; ร้านเสริมสวย "แฮร์เบสท์" ถนนเจ้าฟ้าตะวันออก (ตรงข้ามตลาดมุมเมือง)
+      </div>
+    </div>
+    <div id="app" class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -8,9 +15,3 @@
 export default {
 }
 </script>
-
-<style scope lang="scss">
-@import './../node_modules/bulma/css/bulma.css';
-@import './../node_modules/bulma/sass/utilities/mixins.sass';
-@import './assets/scss/main.scss';
-</style>

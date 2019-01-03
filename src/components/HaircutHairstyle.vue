@@ -7,12 +7,12 @@
         <h1 class="title">บริการของเรา</h1>
         <h2 class="subtitle">Haircut &amp; Style</h2>
         <div v-html="content"></div>
-        <p class="has-text-centered">
+        <p class="has-text-centered mt-20">
           <img src="../../static/images/working.jpg" class="mt-20">
           <img src="../../static/images/shop4.jpg" class="mt-20">
         </p>
       </div>
-      <div class="column aside box">
+      <div class="column aside">
         <carousel :data="carouselData" :indicators="false" :interval="2500"/>
         <p>
           รับออกแบบทรงผมสุภาพบุรุษและสุภาพสตรี โดยทีมงานผู้เชี่ยวชาญสร้างสรรค์ด้วยฝีมือ
@@ -26,6 +26,7 @@
         </p>
       </div>
     </div>
+    <LowerPart/>
     <FooterContact/>
   </div>
 </template>

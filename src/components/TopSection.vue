@@ -20,7 +20,12 @@
     <header v-else>
       <div class="columns">
         <div class="column cc">
-          <img alt="เสริมสวย" class="mt-10" src="../../static/images/hairbestphuket.png">
+          <img
+            @click="go2page"
+            alt="เสริมสวย"
+            class="mt-10"
+            src="../../static/images/hairbestphuket.png"
+          >
         </div>
       </div>
       <div class="columns cc is-size-7">Professional hair care &amp; stylish in Phuket</div>
@@ -34,6 +39,11 @@ export default {
   data () {
     return {
       url: '/phuket-hair-shop'
+    }
+  },
+  methods: {
+    go2page: function () {
+      this.$router.push('haircut-hairstyle')
     }
   }
 }

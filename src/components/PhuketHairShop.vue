@@ -3,20 +3,28 @@
     <TopSection fullhead/>
     <Navigation/>
     <div class="columns">
-      <div class="column is-two-thirds">
+      <div class="column is-two-thirds blogdata">
         <h1 class="title">แฮร์เบสท์ ภูเก็ต</h1>
         <h2 class="subtitle">สถาบัน HAIR BEST BY IN TREND HAIR STYLE</h2>
         <div v-html="content1" class="mb-20"></div>
-        <carousel :data="carouselData" :indicators="false" :interval="2500"/>
+        <carousel
+          :data="carouselData"
+          direction="up"
+          :controls="false"
+          :indicators="false"
+          :interval="2500"
+        />
         <img src="../../static/images/shop4.jpg" class="mt-30">
       </div>
-      <div class="column aside box">
-        <img
-          src="../../static/images/map.png"
-          alt="ร้านเสริมสวย แฮร์เบสท์"
-          title="ร้านเสริมสวย แฮร์เบสท์"
-        >
-        <img src="../../static/images/shop3.jpg" class="mt-10 mb-10" alt="เสริมสวย">
+      <div class="column aside">
+        <p class="is-centered-text">
+          <img
+            src="../../static/images/map.png"
+            alt="ร้านเสริมสวย แฮร์เบสท์"
+            title="ร้านเสริมสวย แฮร์เบสท์"
+          >
+          <img src="../../static/images/shop3.jpg" class="mt-10 mb-10" alt="เสริมสวย">
+        </p>
         <p>
           รับออกแบบทรงผมสุภาพบุรุษและสุภาพสตรี โดยทีมงานผู้เชี่ยวชาญสร้างสรรค์ด้วยฝีมือ
           เชื่อถือด้วยผลงาน
@@ -24,8 +32,9 @@
       </div>
     </div>
     <div class="columns">
-      <div class="column is-full" v-html="content2"></div>
+      <div class="column is-full blogdata" v-html="content2"></div>
     </div>
+    <LowerPart/>
     <FooterContact/>
   </div>
 </template>

@@ -1,256 +1,158 @@
+@import '~bulma/bulma';
 @import url('https://fonts.googleapis.com/css?family=Kanit:400,600|Prompt|Sriracha&subset=thai');
 @import 'shorthand.scss';
-body {
-  min-height: 100vh;
-  // background: url('./assets/bg/bg-pink.jpg') center top no-repeat fixed;
-  // background-position-y: 12rem;
-  background: url('./assets/bg/195645ee7357cbb.jpg') center bottom no-repeat fixed;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-}
-
-h1 {
-  @extend .dropshadow;
-}
-
-.title {
-  font-weight: 400;
-  font-size: 1.6rem;
-}
-
-.subtitle {
-  color: #999;
-}
-
-.container {
-  background-color: rgba(255, 255, 255, 0.8);
-  @extend .boxshadow;
-  @include mobile {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  @include from($tablet) {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-}
-
-.is-two-thirds,
-.is-full {
-  background-color: rgba(255, 255, 255, 0.9);
-  @include from($tablet) {
-    padding-right: 4rem;
-    font-size: 1.05rem;
-    color: #777;
-  }
-  h3 {
-    letter-spacing: -2px;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: purple;
-    @extend .dropshadow;
-  }
-  h4 {
-    font-family: 'Sriracha', cursive;
-    font-size: 1.3rem;
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #900;
-  }
-  em {
-    padding: 2rem 5rem;
-    display: inline-block;
-    color: #369;
-    border-left: 3px solid #369;
-    margin: 2rem 0;
-  }
-}
-
-.is-full {
-  padding-top: 3rem;
-}
+@import 'layout.scss';
+@import 'top.scss';
+@import 'navbar.scss';
 
 .columns {
   font-family: 'Kanit', sans-serif;
-}
-footer {
-  font-family: 'Prompt', sans-serif;
-}
-.navbar-item,
-.aside > p {
-  font-family: 'Sriracha', cursive;
-}
-nav {
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-}
-.navbar {
-  background: none;
-}
-.roller {
-  height: 205px;
-  width: 89px;
-  border: none;
-  position: absolute;
-  right: 70px;
-  top: 0;
-  z-index: 999;
-  @include mobile {
-    right: 1rem;
-    height: 140px;
-  }
-}
-
-.textContactTop {
-  p {
-    font-size: 0.9rem;
-    //line-height: 0.6;
-    &:first-child {
-      font-family: 'Sriracha', cursive;
-      font-size: 2rem;
-    }
-  }
-  @include mobile {
-    padding-top: 0;
-    // padding-bottom: 2rem;
-    text-align: left;
-    p:first-child {
-      font-size: 1.5rem;
-    }
-    p:last-child {
-      display: none;
-    }
-  }
-
-  @include from($tablet) {
-    text-align: right;
-    padding-top: 2.5rem;
-  }
-}
-a.navbar-item {
-  color: #3273dc;
-  padding: 0.8rem 0.95rem;
-  //border-top: 2px solid #ccc;
-  &:hover {
-    background: none;
-    text-decoration: underline;
-    // @include transition(all, 0.5s, ease);
-  }
-  &.active {
-    text-decoration: underline;
-    color: #ff0a66;
-  }
-  // @include transition(all, 0.5s, ease);
-}
-
-.navbar-start {
-  @include from($desktop) {
-    a {
-      &:first-child {
-        margin-left: 0;
-        padding-left: 0;
-      }
-    }
-  }
-}
-
-.navbar-burger {
-  margin-left: 0;
-  transform: scale(2.5);
-  &:hover {
-    background: none;
-  }
-  strong {
-    margin: 18px 0 0 40px;
-    display: inline-block;
-    font-family: 'Sriracha', cursive;
-    white-space: nowrap;
-    font-size: 0.6rem;
-    color: #3273dc;
-  }
-}
-
-.columns {
   .blogdata {
-    ul {
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      li {
-        margin-left: 2rem;
-        list-style-type: disc;
-        border-bottom: 1px dotted #ff0a66;
-        padding: 0.5rem;
-        max-width: 70%;
-      }
-      & li:last-child {
-        border-bottom: none;
+    @include from($tablet) {
+      padding: 4rem;
+      padding-top: 2.5rem;
+    }
+    div {
+      &:not(.carousel) {
+        ul {
+          margin-top: 0.5rem;
+          margin-bottom: 1.5rem;
+          li {
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            border-bottom: 1px dotted #ff0a66;
+            padding: 0.5rem;
+            max-width: 70%;
+            &:last-child {
+              border-bottom: none;
+            }
+            @include mobile {
+              max-width: 90%;
+            }
+          }
+        }
       }
     }
     p {
       margin-bottom: 1rem;
     }
+    h1 {
+      @extend .dropshadow;
+      .title {
+        font-weight: 400;
+        font-size: 1.6rem;
+      }
+    }
+    h2 {
+      .subtitle {
+        color: #999;
+      }
+    }
+    h3 {
+      letter-spacing: -2px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: purple;
+      @extend .dropshadow;
+    }
+    h4 {
+      font-family: 'Sriracha', cursive;
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #900;
+    }
+    em {
+      padding: 2rem 5rem;
+      display: inline-block;
+      color: #369;
+      border-left: 3px solid #369;
+      margin: 2rem 0;
+      font-size: 1.3rem;
+    }
+
+    p.red {
+      color: #900;
+    }
+
+    .numberbox {
+      font-size: 2rem;
+      display: inline-block;
+      color: #ff0099;
+      padding: 10px 25px;
+      border: 1px solid #999;
+      background: url('../bg/numbg.png') center no-repeat;
+      margin-bottom: 30px;
+    }
+
+    .blockpad {
+      height: 50px;
+    }
+
+    .wp-image-73,
+    .wp-image-76,
+    .wp-image-90,
+    .wp-image-101,
+    .wp-image-112 {
+      float: right;
+      margin-left: 20px;
+    }
+    .wp-image-91,
+    .wp-image-92,
+    .wp-image-93,
+    .wp-image-94,
+    .wp-image-102,
+    .wp-image-103,
+    .wp-image-104,
+    .wp-image-106,
+    .wp-image-109 {
+      margin-top: 30px;
+    }
+    .wp-image-79 {
+      float: left;
+      margin-right: 20px;
+    }
+    .wp-image-85,
+    .wp-image-86 {
+      max-width: 400px;
+    }
+  }
+  a.button.is-loading {
+    border: none;
+    background: none;
   }
 }
 
-a.button.is-loading {
-  border: none;
-  background: none;
-}
-
-.aside {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcecfc+61,fba6e1+88,f986d3+88,f986d3+88,ffa8e4+100 */
-  // background: #fcecfc; /* Old browsers */
-  // background: -moz-linear-gradient(45deg, #fcecfc 61%, #fba6e1 88%, #f986d3 88%, #f986d3 88%, #ffa8e4 100%); /* FF3.6-15 */
-  // background: -webkit-linear-gradient(45deg, #fcecfc 61%, #fba6e1 88%, #f986d3 88%, #f986d3 88%, #ffa8e4 100%); /* Chrome10-25,Safari5.1-6 */
-  // background: linear-gradient(45deg, #fcecfc 61%, #fba6e1 88%, #f986d3 88%, #f986d3 88%, #ffa8e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ffa8e4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.aside > p {
-  padding: 0 1.4rem;
-  font-size: 1.1rem;
-  text-align: center;
-  color: #3273dc;
-  margin-top: 1.5rem;
-}
-
-.carousel {
+.cc {
   img {
-    width: 100%;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
-.welcomeSlide > .carousel {
-  img {
-    width: auto;
+
+.welcome {
+  h1 {
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    color: #b8309c;
+  }
+  p {
+    margin: 10px 0 20px;
+  }
+  section {
+    &:first-child {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
-.slide-index {
-  display: flex;
-  font-size: 1.5rem;
-  justify-content: center;
-  min-height: 10rem;
-  margin-top: 1rem;
+
+footer {
+  font-family: 'Prompt', sans-serif;
 }
 
-.welcome h1 {
-  font-family: 'Kanit', sans-serif;
-  font-size: 2rem;
-  letter-spacing: -1px;
-}
-
-p.red {
-  color: #900;
-}
-
-.wp-image-73,
-.wp-image-76 {
-  float: right;
-  margin-left: 20px;
-}
-
-.wp-image-79 {
-  float: left;
-  margin-right: 20px;
-}
+@import 'carousel.scss';

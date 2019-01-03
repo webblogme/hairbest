@@ -7,29 +7,27 @@
         <h1 class="title">ผลิตภัณฑ์ดูแลเส้นผม</h1>
         <h2 class="subtitle">Professional Haircare</h2>
         <div v-html="content3"></div>
-        <div class="columns mt-30">
-          <div class="column is-narrow">
-            <carousel
-              :data="carouselData2"
-              direction="up"
-              :controls="false"
-              :indicators="false"
-              :interval="3000"
-            />
-          </div>
-          <div class="column">
-            <img src="../../static/images/ultima.jpg">
-          </div>
-          <!-- /.column -->
-        </div>
+
+        <br>
+
+        <carousel
+          :data="carouselData2"
+          direction="up"
+          :controls="false"
+          :indicators="false"
+          :interval="3000"
+        />
       </div>
-      <div class="column aside box">
+      <div class="column aside">
         <carousel :data="carouselData" :indicators="false" :interval="2500"/>
         <p>
           รับออกแบบทรงผมสุภาพบุรุษและสุภาพสตรี โดยทีมงานผู้เชี่ยวชาญสร้างสรรค์ด้วยฝีมือ
           เชื่อถือด้วยผลงาน
         </p>
-        <img src="../../static/images/products.jpg" alt="ผลิตภัณฑ์เสริมสวยชั้นนำ" class="mt-20">
+        <p class="is-centered-text">
+          <img src="../../static/images/products.jpg" alt="ผลิตภัณฑ์เสริมสวยชั้นนำ" class="mt-20">
+          <img src="../../static/images/ultima.jpg">
+        </p>
       </div>
     </div>
 
@@ -48,6 +46,7 @@
         </div>
       </div>
     </div>
+    <LowerPart/>
     <FooterContact/>
   </div>
 </template>

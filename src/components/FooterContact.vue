@@ -1,9 +1,5 @@
 <template>
   <footer class="footer has-text-centered">
-    <img
-      src="../../static/images/4logos.png"
-      style="border-bottom: 0.2rem solid #ff0a66; padding-bottom:1rem;"
-    >
     <div class="navbar">
       <template v-for="cat in cates">
         <router-link
@@ -12,7 +8,10 @@
           :to="cat[2]"
           :key="cat[0]"
           style="border-top:none"
-        >{{ cat[1] }}</router-link>
+        >
+          <span>&#9752;</span>
+          {{ cat[1] }}
+        </router-link>
       </template>
     </div>
     <div class="content has-text-centered">

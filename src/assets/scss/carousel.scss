@@ -1,0 +1,22 @@
+.carousel {
+  img {
+    width: 100%;
+  }
+}
+.blogdata div.carousel {
+  img {
+    max-width: 400px;
+  }
+}
+.welcomeSlide > .carousel {
+  img {
+    width: auto;
+  }
+}
+.slide-index {
+  margin-top: 1rem;
+  @include from($desktop) {
+    display: flex;
+    justify-content: center;
+  }
+}

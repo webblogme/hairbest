@@ -1,0 +1,91 @@
+nav {
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  z-index: 5000;
+}
+
+.navbar {
+  background: none;
+}
+
+a.navbar-item {
+  font-family: 'Sriracha', cursive;
+  color: #3273dc;
+  padding: 0.8rem 0;
+  margin-right: 20px;
+  border-bottom: 2px solid #ccc;
+  span {
+    font-size: 1.6rem;
+    line-height: 1;
+    display: inline-block;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+  }
+  //border-top: 2px solid #ccc;
+  &:hover,
+  &.active {
+    background: none;
+    color: #ff0a66;
+    // @include transition(all, 0.5s, ease);
+  }
+  &.active {
+    border-bottom: 3px solid #ff0a66;
+  }
+  @include mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.navbar-start {
+  @include from($desktop) {
+    a {
+      &:first-child {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.navbar-burger {
+  margin-left: 0;
+  transform: scale(2);
+  &:hover {
+    background: none;
+  }
+  strong {
+    margin: 18px 0 0 40px;
+    display: inline-block;
+    font-family: 'Sriracha', cursive;
+    font-weight: normal;
+    white-space: nowrap;
+    font-size: 0.7rem;
+    color: #3273dc;
+  }
+}
+
+.something {
+  height: 55px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b7deed+0,71ceef+50,21b4e2+51,b7deed+100;Shape+1+Style */
+  background: #b7deed; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #b7deed 0%, #71ceef 50%, #21b4e2 51%, #b7deed 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #b7deed 0%, #71ceef 50%, #21b4e2 51%, #b7deed 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #b7deed 0%, #71ceef 50%, #21b4e2 51%, #b7deed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  width: 100%;
+  z-index: -1000;
+  display: flex;
+  padding-top: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Prompt', sans-serif;
+  font-size: 0.95rem;
+  @include mobile {
+    font-size: 0.65rem;
+    padding-top: 13px;
+  }
+}
