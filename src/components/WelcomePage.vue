@@ -2,7 +2,7 @@
   <div>
     <TopSection/>
     <div class="columns">
-      <div class="column">
+      <div class="column welcomeSlide">
         <carousel :data="carouselData" :indicators="hover" :interval="2500"/>
       </div>
     </div>

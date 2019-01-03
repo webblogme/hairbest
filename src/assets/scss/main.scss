@@ -171,14 +171,16 @@ a.button.is-loading {
 }
 
 .carousel {
-  ul li {
-    border: none;
-    padding: 0;
+  img {
+    width: 100%;
   }
 }
-
+.welcomeSlide > .carousel {
+  img {
+    width: auto;
+  }
+}
 .slide-index {
-  color: #999;
   display: flex;
   font-size: 1.5rem;
   justify-content: center;
