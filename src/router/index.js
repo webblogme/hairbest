@@ -5,6 +5,7 @@ import HaircutHairstyle from '@/components/HaircutHairstyle'
 import ProfessionalHaircare from '@/components/ProfessionalHaircare'
 import SpaTreatments from '@/components/SpaTreatments'
 import PhuketHairShop from '@/components/PhuketHairShop'
+import Error404 from '@/components/Error404'
 import Meta from 'vue-meta'
 
 Vue.use(Router)
@@ -21,6 +22,7 @@ export default new Router({
     { path: '/haircut-hairstyle', component: HaircutHairstyle },
     { path: '/professional-haircare', component: ProfessionalHaircare },
     { path: '/spa-treatments', component: SpaTreatments },
-    { path: '/phuket-hair-shop', component: PhuketHairShop }
+    { path: '/phuket-hair-shop', component: PhuketHairShop },
+    { path: '*', component: Error404 }
   ]
 })

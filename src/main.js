@@ -4,11 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueResources from 'vue-resource'
-import './../node_modules/bulma/css/bulma.css'
-import './assets/main.less'
+
+import VueCarousel from '@chenfengyuan/vue-carousel'
+
+import TopSection from './components/TopSection'
+import Navigation from './components/Navigation'
+import FooterContact from './components/FooterContact'
+Vue.component(VueCarousel.name, VueCarousel)
 
 Vue.use(VueResources)
 Vue.http.options.root = 'http://localhost:97/api/'
+
+Vue.component('TopSection', TopSection)
+Vue.component('Navigation', Navigation)
+Vue.component('FooterContact', FooterContact)
 
 Vue.config.productionTip = false
 

@@ -1,14 +1,37 @@
 <template>
-  <div class="theCenter">
-    ร้านเสริมสวย "แฮร์เบสท์" 70/150 ถนนเจ้าฟ้าตะวันออก (100เมตร จากไฟแดงภูเก็ตวิลล่า 3 ตรงข้ามตลาดมุมเมือง) ตำบลวิชิต อำเภอเมือง ภูเก็ต 83000
-    เปิดบริการทุกวัน | โทร 076-245-554 | อีเมล info@hairbestphuket.com
-    &copy; {{ year }} - Webdesing &nbsp; Hosting by
-    <a
-      href="http://www.allyouneedforweb.com"
-      target="_blank"
-      title="Allyouneedforweb"
-    >Allyouneedforweb</a>
-  </div>
+  <footer class="footer has-text-centered">
+    <img
+      src="../../static/images/4logos.png"
+      style="border-bottom: 0.2rem solid #ff0a66; padding-bottom:1rem;"
+    >
+    <div class="navbar">
+      <template v-for="cat in cates">
+        <router-link
+          class="navbar-item navbar-center is-size-4"
+          active-class="active"
+          :to="cat[2]"
+          :key="cat[0]"
+          style="border-top:none"
+        >{{ cat[1] }}</router-link>
+      </template>
+    </div>
+    <div class="content has-text-centered">
+      <h6 class="is-size-5">ร้านเสริมสวย "แฮร์เบสท์"</h6>
+      <p class="is-size-7">
+        70/150 ถนนเจ้าฟ้าตะวันออก (100เมตร จากไฟแดงภูเก็ตวิลล่า 3 ตรงข้ามตลาดมุมเมือง)
+        ตำบลวิชิต อำเภอเมือง ภูเก็ต 83000
+        <br>เปิดบริการทุกวัน | โทร 076-245-554 | อีเมล info@hairbestphuket.com
+      </p>
+      <p class="is-size-7">
+        &copy; {{ year }} - Webdesing &nbsp; Hosting by
+        <a
+          href="http://www.allyouneedforweb.com"
+          target="_blank"
+          title="Allyouneedforweb"
+        >Allyouneedforweb</a>
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -20,14 +43,28 @@ var year = currentTime.getFullYear()
 export default {
   data () {
     return {
-      year: year
+      year: year,
+      cates: [
+        ['บริกราตัดสระซอยผม และอื่นๆ', 'บริการเสริมสวย', '/haircut-hairstyle'],
+        ['บริการดูแลเส้นผมด้วยผลิตภัณฑ์ชั้นนำ', 'ดูแลเส้นผม', '/professional-haircare'],
+        ['ทำสปา นวด ขัดผิว', 'สปา ทรีทเม้นท์', '/spa-treatments'],
+        ['ร้านทำผม แฮร์เบส ภูเก็ต', 'ประวัติ+ที่ตั้งร้าน', '/phuket-hair-shop']
+      ]
     }
   }
 }
 </script>
 
-<style scoped lang="less">
-.theCenter {
-  text-align: center;
+<style>
+.footer {
+  background: none;
+}
+footer > .navbar {
+  flex-grow: 1;
+  justify-content: center;
+  padding-top: 2rem;
+}
+.navbar {
+  margin-bottom: 2rem;
 }
 </style>

@@ -1,18 +1,16 @@
 <template>
-  <div id="app">
-    <router-link to="/" title="xxx">Go home</router-link>
+  <div id="app" class="container">
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
 }
 </script>
 
-<style>
-#app {
-  text-align: center;
-}
+<style scope lang="scss">
+@import './../node_modules/bulma/css/bulma.css';
+@import './../node_modules/bulma/sass/utilities/mixins.sass';
+@import './assets/scss/main.scss';
 </style>
