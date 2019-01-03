@@ -25,7 +25,7 @@ h1 {
 }
 
 .container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   @extend .boxshadow;
   @include mobile {
     padding-left: 1rem;
@@ -39,6 +39,7 @@ h1 {
 
 .is-two-thirds,
 .is-full {
+  background-color: rgba(255, 255, 255, 0.9);
   @include from($tablet) {
     padding-right: 4rem;
     font-size: 1.05rem;
@@ -84,6 +85,9 @@ footer {
 nav {
   margin-bottom: 3rem;
   margin-top: 1rem;
+}
+.navbar {
+  background: none;
 }
 .roller {
   height: 205px;
@@ -139,6 +143,33 @@ a.navbar-item {
     color: #ff0a66;
   }
   // @include transition(all, 0.5s, ease);
+}
+
+.navbar-start {
+  @include from($desktop) {
+    a {
+      &:first-child {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.navbar-burger {
+  margin-left: 0;
+  transform: scale(2.5);
+  &:hover {
+    background: none;
+  }
+  strong {
+    margin: 18px 0 0 40px;
+    display: inline-block;
+    font-family: 'Sriracha', cursive;
+    white-space: nowrap;
+    font-size: 0.6rem;
+    color: #3273dc;
+  }
 }
 
 .columns {

@@ -1,24 +1,25 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand is-hidden-desktop">
-      <a class="navbar-item" href="./">HairBest Chaofas</a>
+    <div class="navbar-brand">
       <a
         role="button"
-        class="navbar-burger burger"
+        class="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarBasicExample"
+        onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
+        <strong>เมนู &#9656; ร้านเสริมสวยแฮร์เบสภูเก็ต</strong>
       </a>
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <template v-for="cat in cates">
           <router-link
-            class="navbar-item navbar-center is-size-4"
+            class="navbar-item is-size-4"
             active-class="active"
             :to="cat[2]"
             :key="cat[0]"
