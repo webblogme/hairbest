@@ -3,7 +3,8 @@
     <TopSection/>
     <div class="columns">
       <div class="column welcomeSlide">
-        <carousel :data="carouselData" :indicators="hover" :interval="2500"/>
+        {{ seoTitle }}
+        <carousel :data="carouselData" :interval="2500"/>
       </div>
     </div>
     <div class="columns">
@@ -39,12 +40,15 @@ export default {
     return {
       msg: 'Hair Best Phuket',
       content: '',
+      seoTitle: '',
+      seoDesc: '',
+      seoKeyword: '',
       carouselData: [
-        '<div class="slide-index"><img src="../static/slides/loop001.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div?',
-        '<div class="slide-index"><img src="../static/slides/loop002.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div?',
-        '<div class="slide-index"><img src="../static/slides/loop003.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div?',
-        '<div class="slide-index"><img src="../static/slides/loop004.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div?',
-        '<div class="slide-index"><img src="../static/slides/loop005.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div?'
+        '<div class="slide-index"><img src="../static/slides/loop001.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div>',
+        '<div class="slide-index"><img src="../static/slides/loop002.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div>',
+        '<div class="slide-index"><img src="../static/slides/loop003.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div>',
+        '<div class="slide-index"><img src="../static/slides/loop004.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div>',
+        '<div class="slide-index"><img src="../static/slides/loop005.jpg" alt="Hair Best Phuket" title="Hair Best Phuket"></div>'
       ]
     }
   },
@@ -58,16 +62,27 @@ export default {
   },
   created: function () {
     this.$http.get('get_page/?id=5').then(response => {
-      // console.log(response.body.page.content)
+      // console.log(response.body.page)
       this.content = response.body.page.content
+      this.seoTitle = response.body.page.custom_fields.title[0]
+      this.seoDesc = response.body.page.custom_fields.desc[0]
+      this.seoKeyword = response.body.page.custom_fields.keyword[0]
     })
   },
-  metaInfo: {
-    title: 'Hair Best Phuket', // set a title
-    titleTemplate: '%s - Yay!', // title is now "My Example App - Yay!"
-    htmlAttrs: {
-      lang: 'en',
-      amp: undefined // "amp" has no value
+  metaInfo () {
+    return {
+      title: this.seoTitle, // set a title
+      htmlAttrs: {
+        lang: 'en'
+      },
+      meta: [
+        { name: 'description', content: this.seoDesc },
+        { name: 'keywords', content: this.seoKeyword }
+      ],
+      link: [
+        { rel: 'favicon', href: '../static/favicon.ico', type: 'image/x-icon' },
+        { rel: 'shortcut icon', href: '../static/favicon.ico', type: 'image/x-icon' }
+      ]
     }
   }
 }

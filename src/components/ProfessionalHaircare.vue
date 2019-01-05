@@ -58,6 +58,9 @@ export default {
       content1: '',
       content2: '',
       content3: '',
+      seoTitle: '',
+      seoDesc: '',
+      seoKeyword: '',
       carouselData: [
         '<img src="../static/slides/care001.jpg" alt="Hair Best Phuket" title="Hair Best Phuket">',
         '<img src="../static/slides/care002.jpg" alt="Hair Best Phuket" title="Hair Best Phuket">',
@@ -88,14 +91,25 @@ export default {
     this.$http.get('get_page/?id=10').then(response => {
       // console.log(response.body.page.content)
       this.content3 = response.body.page.content
+      this.seoTitle = response.body.page.custom_fields.title[0]
+      this.seoDesc = response.body.page.custom_fields.desc[0]
+      this.seoKeyword = response.body.page.custom_fields.keyword[0]
     })
   },
-  metaInfo: {
-    title: 'Hair Best Phuket', // set a title
-    titleTemplate: '%s - Yay!', // title is now "My Example App - Yay!"
-    htmlAttrs: {
-      lang: 'en',
-      amp: undefined // "amp" has no value
+  metaInfo () {
+    return {
+      title: this.seoTitle, // set a title
+      htmlAttrs: {
+        lang: 'en'
+      },
+      meta: [
+        { name: 'description', content: this.seoDesc },
+        { name: 'keywords', content: this.seoKeyword }
+      ],
+      link: [
+        { rel: 'favicon', href: '../static/favicon.ico', type: 'image/x-icon' },
+        { rel: 'shortcut icon', href: '../static/favicon.ico', type: 'image/x-icon' }
+      ]
     }
   }
 }

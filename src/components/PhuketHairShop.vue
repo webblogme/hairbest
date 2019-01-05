@@ -45,6 +45,9 @@ export default {
     return {
       content1: '',
       content2: '',
+      seoTitle: '',
+      seoDesc: '',
+      seoKeyword: '',
       carouselData: [
         '<img src="../static/slides/shop0001.jpg" alt="Hair Best Phuket" title="Hair Best Phuket">',
         '<img src="../static/slides/shop0002.jpg" alt="Hair Best Phuket" title="Hair Best Phuket">',
@@ -62,18 +65,29 @@ export default {
     this.$http.get('get_page/?id=19').then(response => {
       // console.log(response.body.page.content)
       this.content1 = response.body.page.content
+      this.seoTitle = response.body.page.custom_fields.title[0]
+      this.seoDesc = response.body.page.custom_fields.desc[0]
+      this.seoKeyword = response.body.page.custom_fields.keyword[0]
     })
     this.$http.get('get_page/?id=21').then(response => {
       // console.log(response.body.page.content)
       this.content2 = response.body.page.content
     })
   },
-  metaInfo: {
-    title: 'Hair Best Phuket', // set a title
-    titleTemplate: '%s - Yay!', // title is now "My Example App - Yay!"
-    htmlAttrs: {
-      lang: 'en',
-      amp: undefined // "amp" has no value
+  metaInfo () {
+    return {
+      title: this.seoTitle, // set a title
+      htmlAttrs: {
+        lang: 'en'
+      },
+      meta: [
+        { name: 'description', content: this.seoDesc },
+        { name: 'keywords', content: this.seoKeyword }
+      ],
+      link: [
+        { rel: 'favicon', href: '../static/favicon.ico', type: 'image/x-icon' },
+        { rel: 'shortcut icon', href: '../static/favicon.ico', type: 'image/x-icon' }
+      ]
     }
   }
 }
