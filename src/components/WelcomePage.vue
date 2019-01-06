@@ -3,7 +3,6 @@
     <TopSection/>
     <div class="columns">
       <div class="column welcomeSlide">
-        {{ seoTitle }}
         <carousel :data="carouselData" :interval="2500"/>
       </div>
     </div>

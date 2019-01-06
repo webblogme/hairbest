@@ -1,6 +1,6 @@
 <template>
   <div>
-    <iframe v-if="fullhead" src="http://hairbestphuket.com/swf-row.html" class="roller"></iframe>
+    <iframe v-if="fullhead" src="../../static/swf-row.html" class="roller"></iframe>
     <header v-if="fullhead">
       <div class="columns">
         <div class="column is-5">

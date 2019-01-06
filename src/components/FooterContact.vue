@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer has-text-centered">
+  <footer class="footer has-text-centered" style="background: none;">
     <div class="navbar">
       <template v-for="cat in cates">
         <router-link
@@ -54,10 +54,7 @@ export default {
 }
 </script>
 
-<style>
-.footer {
-  background: none;
-}
+<style scoped>
 footer > .navbar {
   flex-grow: 1;
   justify-content: center;
