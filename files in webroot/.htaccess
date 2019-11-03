@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  #RewriteRule ^index\.html$ - [L]
+  #RewriteCond %{REQUEST_FILENAME} !-f
+  #RewriteCond %{REQUEST_FILENAME} !-d
+  #RewriteRule . /index.html [L]
+
+  RewriteRule ^.well-known/ - [L,NC]
+  #RewriteCond %{HTTPS} off
+  #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^([a-z.]+)?hairbestphuket.com$ [NC]
+  RewriteCond %{HTTP_HOST} !^www. [NC]
+  RewriteRule .? https://www.%1hairbestphuket.com%{REQUEST_URI} [R=301,L]
+
+  #RewriteCond %{HTTP_HOST} !^www\.
+  #RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{HTTPS} off
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+Redirect 301 /index.htm https://www.hairbestphuket.com
+Redirect 301 /index.php https://www.hairbestphuket.com
+Redirect 301 /haircut-hairstyle.htm https://www.hairbestphuket.com/haircut-hairstyle
+Redirect 301 /professional-haircare.htm https://www.hairbestphuket.com/professional-haircare
+Redirect 301 /spa-treatments.htm https://www.hairbestphuket.com/spa-treatments
+Redirect 301 /phuket-hair-shop.htm https://www.hairbestphuket.com/phuket-hair-shop
+Redirect 301 /webboard https://www.hairbestphuket.com

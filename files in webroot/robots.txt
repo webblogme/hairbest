@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /demo/
+Disallow: /mail/
+Disallow: /engine/
+Disallow: /oldwebsite/

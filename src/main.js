@@ -20,7 +20,7 @@ Vue.component(VueCarousel.name, VueCarousel)
 require('./assets/scss/main.scss')
 
 Vue.use(VueResources)
-Vue.http.options.root = 'http://www.hairbestphuket.com/engine/api/'
+Vue.http.options.root = 'https://www.hairbestphuket.com/engine/api/'
 
 Vue.component('TopSection', TopSection)
 Vue.component('Navigation', Navigation)
